@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <meta charset="UTF-8">
+  <meta name="description" content="ボックスモデルについて学習します">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>ボックスモデル学習</title>
+
+  <head>
+    <link rel="stylesheet" href="ボックスモデル学習.SCSS.css">
+  </head>
+  
+  <header>
+<h1>ボックスモデル学習メモ</h1> 
+
+</header>
+
+  <main>
+    <div class="boxModel-a">
+      <h2>ボックスモデルの概念</h2>
+        <h3>ボックスモデルの4要素とは？</h3>
+          <h4>ボックスモデルには4つの要素があり、
+            <br>それぞれの役割を理解する事でレイアウトの構成に役立ちます</h4>
+            <details>
+                <summary>
+                ボックスモデル画像            
+              </summary>
+
+              <img id="scroll" src="https://lms-production-media-store.s3-ap-northeast-1.amazonaws.com/assets/images/programs/html-css-basic/3e4a0834-eff6-4de2-b049-efc6b2526b6c" alt=""></details>
+            
+          <ul>
+            <li>margin</li>
+            <p>marginとはボックスの一番外側の事である
+            </p>
+            <li id="borderLine">border</li>
+            <p>borderとは一つのボックスの境界線の意味である
+              <br>その地点を基準としてその他のプロパティで調整する
+            </p>
+            <li >padding</li>
+            <p>paddingとはborderの内側の範囲の事である</p>
+            <p>paddingを0にすると、
+              <br>ボーダーだけ強調される為、
+              <br>ケースバイケースで使っていく
+            </p>
+
+            <p class="making">
+              paddingとmarginは、
+              <span class="bold">時計回りに指定する事が可能</span>
+
+            <br>上下と左右が同じなら、1つ目が上下、2つ目が左右になる
+            </p>
+
+            <span class="bold">
+              marginに限っては、上下に隣り合うmargin要素は相殺し合い、数値が大きい方が優先される
+          </span>
+          <!-- marginの左右にautoを指定すると
+          中央揃えになるらしいが、liでは反映されない
+        要素によって異なるのかもしれないから調べる
+      
+      ★中央揃えにする為には、基準となるwidthの設定が必要になる為、%で指定すると楽
+    
+    ただ、text-align:center;の方が記述も少なく、
+  インラインでもブロックでも反映されるから楽
+  ただ、本来はインライン要素で使用されるものなので、
+やるならインラインブロックにしてしまっても良いかも
+
+※marginなどとの併用は不可。そもそもやる必要なし？-->
+            
+            
+            <li>content</li>
+            <p>contentとはボックス要素の中身が表示される領域の事
+              <br>widthとheightで調整する
+              <span class="bold">widthとheightがcontentのサイズの基準となる為、
+                <br>marginとpaddingを指定する為には、事前に前者の指定が必要</span>
+            </p>
+          </ul>
+    </div>
+    
+    <div class="display">
+      <h2>displayプロパティとは？</h2>
+        <p>要素の形式を変更したり、
+          <br>非表示にしたり出来る機能
+          <br>大きく分けて4つのプロパティがある
+        </p>
+      <ul>
+        <li>inline</li>
+          <p>要素が横並びになる
+            <br><span class="bold">端までいっぱいになると折り返す+marginとpaddingの設定は不可（左右の余白の調整は可能）
+              <br>要素の幅と高さは要素自体の大きさ（文字など）に依存する
+            </span>
+          </p>
+        <li>block</li>
+        <p>要素が縦並びになる
+          <br><span class="bold">横幅の領域一杯に広がる為、インラインのように横並びは不可</span></br></p>
+        <li>inline-block</li>
+        <p>インラインとブロック要素の合体版
+          <br><span class="bold">ブロック要素のようにwidthとheightなどの調整が可能で、横並びにも出来る</span></br></p>
+        <li>none</li>
+        <p>要素を非表示にする事が可能
+          <br><span class="bold"></span></br>
+        </p>
+      </ul>
+    </div>
+
+    <section class="default">
+      <h3>プロパティの初期値</h3>
+      <details open>
+        <summary>初期値画像</summary>
+        <img  id="scroll2" src="スクリーンショット (8).png" alt="displayプロパティの初期値">
+      </details>
+      
+    </section>
+    
+    <div class="finish">
+      <h1>最後に</h1>
+      <p>これでボックスモデルの学習は終了になります。<br>
+      続いてpositionプロパティについて学習していきましょう</p>
+      
+    </div>
+    
+      
+  </main>
+
+  <footer>
+
+  </footer>
+</html>

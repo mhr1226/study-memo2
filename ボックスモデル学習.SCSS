@@ -1,0 +1,68 @@
+// ボックスモデルの概念
+main{
+// margin=一番外側
+
+h2{
+  width: 100%;
+  text-align: center;
+}
+summary{
+  font-size: 20px;
+font-weight: bold;
+background-color: #f00;
+width: 100%;
+}
+img{
+
+  &#scroll{
+    overflow-x:scroll;
+    width: 80%;
+  }
+
+  &#scroll2{
+    overflow-x:scroll;
+    width: 80%;
+  }
+}
+
+ul{
+  li{
+    font-weight: bold;
+    list-style:none;
+    font-size: 1.5rem;
+    border: solid 2px #008000;
+    width: 50%;
+    margin: 2rem;
+      &#borderLine {
+      border:solid  3px #ff0;
+      background-color:skyblue;
+    // 子要素の一部にCSSを適用させる時は
+    // & + class or id名で定義する事で
+    // 対応する
+
+    // imgタグはインラインになる為、boxにする為、pタグで囲っている部分があった
+    // その為、次回から画像の自由度を上げる為にもボックスを使うようにしてみる
+
+      }
+    }
+}
+
+.display{
+  margin: 0 4rem;
+}
+
+.making{
+  padding: 5px 10px;
+  // borderを複数の分に使いたい時は、
+  // 要素を分ける必要がある
+  // 2行に線を引きたい時はspanタグ
+}
+.bold{
+  font-weight: bold;
+  text-decoration: underline 0.5px #00f;
+  margin:  1rem auto;
+  display: inline-block;
+  width: 95%;
+}
+
+}
