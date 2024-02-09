@@ -1,0 +1,105 @@
+// 以下変数とミックスインの定義
+
+$colors:(#ffd9df,#87ceeb);
+// 背景色で使用
+$margin-set:20px auto;
+// marginの上下余白20pxの設定
+$container-width:800px;
+// 一番大きい値のwidthにのみ適用（使用回数多いため）
+@mixin box-size($width:null,$height:null,$background-color:null){
+@if $width != null{
+    width:$width;
+    }
+height: $height;
+@if $height != null{
+    height: $height;
+    }
+@if $background-color != null{
+    background-color:$background-color;
+    }
+}
+// 
+// widthとheight,background-colorの記述を統一したかった為使用
+
+// if文は使わない要素を省略できるようにする為に記述しました。
+// 今回は使用頻度として少ないですが、練習も兼ねて入れてます。
+
+@mixin space($margin,$padding){
+
+    margin:$margin;
+  
+      padding:$padding;
+  
+}
+// marginとpaddingの指定を統一したかった為
+// 今回はpaddingは使いませんでしたが、記述の練習と動作チェックをしたかった為入れてます。
+
+@mixin position-set($position,$top:0,$left:0){
+  position: $position;
+  top: $top;
+  left: $left;
+}
+// 重複した記述を避けるために使用
+// positionを除き、省略した際に初期値が0になるよう指定してます。
+
+// 以上。
+// 以下より課題の記述
+
+@import '../テスト/positionプロパティ/position.SCSS';
+// ../は前のフォルダに戻る意味
+// その後にフォルダ名/ファイル名と記述する
+
+#top{
+  @include box-size($container-width,auto,#dcc9f4);
+  // heightを省略した場合、初期値が0となり要素が表示されなくなった為、ここではautoを使用しました
+  @include space($margin-set,null);
+    text-align: center;
+
+  .topchild{
+    @include box-size(20%, auto,nth($colors, 1));
+    // height部分を省略するとレイアウトが崩れた為autoにしてます。
+      display: inline-block;
+    }
+}
+
+#middle{
+  @include box-size($container-width,800px,nth($colors, 1));
+  @include position-set(relative);
+  // top,leftは必要ない為省略してます
+
+  @include space($margin-set,null);
+  
+  #middle-child01,
+  #middle-child02,
+  #middle-child03{
+    @include box-size(200px,200px,nth($colors, 2));
+  }
+  #middle-child01{
+    @include position-set(absolute,100px,100px);
+    }
+  #middle-child02{
+    @include position-set(absolute,300px,300px);
+    }
+  #middle-child03{
+    @include position-set(absolute,500px,500px);
+    }
+}
+
+#bottom{
+  @include box-size($container-width,300px,nth($colors, 2));
+  
+  @include space(0 auto,null);
+// bottom要素を中央揃えにする為に使用
+
+  #bottom-child01,
+  #bottom-child02,
+  #bottom-child03{
+    @include box-size(400px,100px,#e5dcf0);
+    }
+  #bottom-child02{
+    @include position-set(relative,0,200px);
+    }
+  #bottom-child03{
+    @include position-set(relative,0,400px);
+    }
+}

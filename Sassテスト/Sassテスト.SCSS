@@ -1,0 +1,108 @@
+html{
+  font-size: 20px;
+  overflow-x: hidden;
+  // overflowのxとyは座標のx軸とy軸を表している
+  // hiddenの場合ははみ出た部分は非表示になる
+  // 要素内にのみ適用したい場合は、その要素に対して使う事で、
+  // 横スクロールを入れる事が出来る。
+  // 特に指定がないなら、わざわざ入れなくても良い
+  // 決まった場所にスクロールバーを指定し、動かしたいなら
+  // 1：スクロールバーを出せるように、widthなどで調整する事
+  // ２：数値は相対的なものではなく絶対的なもの（pxなど）であること
+  // 上記2点が条件として必要。
+  // overflowだけ指定すると、xy共に反映される
+  
+  // 要素をあえて小さくして、スクロールできるようにするのも有りかも
+  // htmlに&は使わなくても、そもそもhtmlが全体になるから、
+  // その中に共通して入れたい要素だけ入れておけばOK
+}
+
+header{
+  h1{
+    font-weight: bold;
+  }
+
+    h2{
+      overflow: scroll;
+      letter-spacing: 2000px;
+      width: 300px;
+      height: 400px;
+      max-width: 200px;
+      min-width :100px;
+// minとmaxはhtmlや親要素で制限をかけたい時に使える
+      }
+    }
+
+
+    main{    
+    
+      .parent{
+        color:red;
+        overflow: scroll;
+        letter-spacing: 20px;
+      }
+      
+      
+
+      .child{
+        background-color: purple;
+        color: aqua;
+      }
+      // 子要素にwidthを適用すると親要素に依存する
+      // 全体を基準にしたいならremを
+
+    .grandChild{
+        background-color: green;
+        color: yellow;
+      }
+    }
+
+    
+    // &の意味は親要素を指している
+    // その中のclass要素を指定したいときは、スペースを入れる事で
+    // 【親要素の中のclass要素】という意味合いを作ることが出来る
+    
+    // ちなみにメモはCSSに反映されない
+    
+    footer{
+      
+      
+    h2{
+      letter-spacing:20000px;
+      overflow: scroll;
+      width: 500px;
+      height: 300px;
+    }
+    // 親要素を&で指定した場合は、その要素が子要素に全て反映されるため、
+    // 同じ内容をその要素内で使いたい時には便利
+    
+    // 逆に親要素の中の一部の子要素にだけ別のプロパティを入れたい時は、
+    // 個別のセレクタで指定する事
+    
+    // &を使うのは、その要素内で共通のプロパティを使う時にしておく
+    // それ以外は個別セレクタを使う
+    h3{
+      background-color:#ff0;
+      text-align: center;
+        height: 2rem;
+      }
+      
+      h4{
+        background-color:#f00;
+        font-size: 2rem;
+      }
+      h5{
+        background-color:skyblue;
+      }
+      
+      .bgcolor{
+      background-color:#ffc0cb;
+      font-size: 40px;
+
+    }
+    // &だけではなく、idやclassで一括りにしても、その要素内のものは全て変わる為
+    // &の使い時・class,idで済むケースの使い分けが必要
+
+    // font-sizeは同じ大きさにしても見出しによって大きくなり方は変わる
+    }
+    

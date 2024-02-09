@@ -1,0 +1,36 @@
+@charset "UTF-8";
+h2 {
+  background-color: white;
+}
+
+.header a {
+  color: red;
+}
+.header a:hover {
+  color: #87ceeb;
+}
+.header a:active {
+  color: blue;
+}
+
+.header {
+  background-color: #ffd9df;
+  margin: 20px auto;
+  text-align: center;
+  /*nth-childは全ての要素内で何番目なのかを
+  指定する*/
+  /*nth-of typeは親要素内の【同じ要素内】何番目なのかを指定する*/
+}
+.header :nth-child(1) {
+  color: white;
+}
+.header a:nth-child(3) {
+  color: yellow;
+}
+.header a:nth-child(3):hover {
+  color: red;
+}
+.header a:nth-child(3):active {
+  color: #008000;
+}
+/*# sourceMappingURL=learning.SCSS.css.map */
