@@ -33,4 +33,7 @@ h2 {
 .header a:nth-child(3):active {
   color: #008000;
 }
+.header :not(a) {
+  color: green;
+}
 /*# sourceMappingURL=learning.SCSS.css.map */
